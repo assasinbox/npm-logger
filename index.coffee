@@ -21,6 +21,10 @@ formatter = (options) ->
       'Server': {}
       'Debug':
         'message': options.message
+        'trace': if options.meta.trace then options.meta.trace else {}
+        'stack': if options.meta.stack then options.meta.stack else {}
+        'os': if options.meta.os then options.meta.os else {}
+        'process': if options.meta.process then options.meta.process else {}
       'User': {}
 
 transports = []

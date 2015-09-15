@@ -39,7 +39,11 @@
         },
         'Server': {},
         'Debug': {
-          'message': options.message
+          'message': options.message,
+          'trace': options.meta.trace ? options.meta.trace : {},
+          'stack': options.meta.stack ? options.meta.stack : {},
+          'os': options.meta.os ? options.meta.os : {},
+          'process': options.meta.process ? options.meta.process : {}
         },
         'User': {}
       }
