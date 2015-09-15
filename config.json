@@ -1,0 +1,77 @@
+{
+    "log":{
+        "exitOnError": false,
+        "levels":[
+            {
+                "name":"debug",
+                "color":"green"
+            },
+            {
+                "name":"info",
+                "color":"blue"
+            },
+            {
+                "name":"warning",
+                "color":"yellow"
+            },
+            {
+                "name":"err",
+                "color":"red"
+            }
+        ],
+        "appType": "NodeJS",
+        "appName": "websocket",
+        "serverName": "127.0.0.0",
+        "transports": {
+            "Console": {
+                "enable": true,
+                "json": false,
+                "timestamp": true,
+                "formatter": false,
+                "colorize": false,
+                "level": "info"
+            },
+            "DailyRotateFile": {
+                "enable": true,
+                "formatter": true,
+                "json": false,
+                "timestamp": true,
+                "filename": "/var/log/websocket/debug.log",
+                "level": "debug",
+                "datePattern": ".yyyy-MM-dd-HH"
+            }
+        },
+        "exceptionHandlers":{
+            "Console": {
+                "enable": true,
+                "json": false,
+                "timestamp": true,
+                "formatter": false,
+                "colorize": false,
+                "level": "err"
+            },
+            "File": {
+                "enable": false,
+                "json": false,
+                "timestamp": true,
+                "filename": "/var/log/websocket/exceptions.log",
+                "level": "debug",
+                "datePattern": ".yyyy-MM-dd-HH"
+            },
+            "Mail": {
+                "enable": false,
+                "host": "smtp.gmail.com",
+                "port": 465,
+                "ssl": true,
+                "username": "mail@gmail.com",
+                "password": "password",
+                "subject": "Exception",
+                "to": "support@gmail.com",
+                "json": false,
+                "timestamp": true,
+                "colorize": true,
+                "level": "err"
+            }
+        }
+    }
+}
