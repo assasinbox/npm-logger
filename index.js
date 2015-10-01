@@ -28,7 +28,7 @@
 
   formatter = function(options) {
     return JSON.stringify({
-      '@timestamp': Date.now(),
+      '@timestamp': Date.toISOString(),
       '@fields': {
         'AppType': config.appType,
         'AppName': config.appName,
@@ -37,15 +37,13 @@
           'name': options.level,
           'code': levelOptions[options.level]
         },
-        'Server': {},
         'Debug': {
           'message': options.message,
           'trace': options.meta.trace ? options.meta.trace : {},
           'stack': options.meta.stack ? options.meta.stack : {},
           'os': options.meta.os ? options.meta.os : {},
           'process': options.meta.process ? options.meta.process : {}
-        },
-        'User': {}
+        }
       }
     });
   };

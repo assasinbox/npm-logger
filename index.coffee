@@ -10,7 +10,7 @@ winston.addColors(levelOptionsColors)
 
 formatter = (options) ->
   JSON.stringify
-    '@timestamp': Date.now()
+    '@timestamp': Date.toISOString()
     '@fields':
       'AppType': config.appType
       'AppName': config.appName
@@ -18,14 +18,12 @@ formatter = (options) ->
       'Severity':
         'name': options.level
         'code': levelOptions[options.level]
-      'Server': {}
       'Debug':
         'message': options.message
         'trace': if options.meta.trace then options.meta.trace else {}
         'stack': if options.meta.stack then options.meta.stack else {}
         'os': if options.meta.os then options.meta.os else {}
         'process': if options.meta.process then options.meta.process else {}
-      'User': {}
 
 transports = []
 exceptionHandlers = []
