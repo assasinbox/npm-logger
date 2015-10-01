@@ -28,7 +28,7 @@
 
   formatter = function(options) {
     return JSON.stringify({
-      '@timestamp': Date.toISOString(),
+      '@timestamp': new Date().toISOString(),
       '@fields': {
         'AppType': config.appType,
         'AppName': config.appName,
